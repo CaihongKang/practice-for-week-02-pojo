@@ -11,6 +11,7 @@ getFullName(p2); // => 'Charlie Brown'
 ***********************************************************************/
 
 function getFullName(person) {
+  return(person.firstName + ' ' + person.lastName) ;
   // Your code here
 }
 

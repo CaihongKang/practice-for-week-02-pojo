@@ -10,10 +10,31 @@ console.log(arrayConverter(["apple", "apple"])); // => {apple: 2}
 console.log(arrayConverter(["mango", "pineapple"])); // => {mango: 1, pineapple: 1}
 console.log(arrayConverter(["apple", "banana", "potato", "banana"])); // => {apple: 1, banana: 2, potato: 1}
 ***********************************************************************/
-
 function arrayConverter(array) {
-  // Your code here
+  let count;
+  let obj = {};
+  for(let i = 0; i < array.length; i++){
+    count = 1;
+    let key = array[i];
+    //console.log(obj[key]);
+    if(obj[key] ===undefined) {
+
+      for(let j= i + 1; j< array.length; j++){
+        if(array[i] == array[j]){
+          count++;
+        }
+
+      }
+      obj[array[i]] = count;
+
+    }
+
+
+  }
+  return obj;
+
 }
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = arrayConverter;

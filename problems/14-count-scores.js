@@ -27,8 +27,33 @@ let peeps = [
 console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 ***********************************************************************/
 
+const { group } = require("console");
+
 function countScores(people) {
   // Your code here
+  let pObj = {};
+  for(let i = 0; i< people.length; i ++){
+    let obj = people[i];
+    let peName = obj.name;
+    let peScore = obj.score;
+    if(pObj[peName] === undefined){
+      for(let j = i + 1; j< people.length; j++){
+        let obj2 = people[j];
+        let peName2= obj2.name;
+        let peScore2 = obj2.score;
+        if(peName == peName2){
+          peScore += peScore2;
+        }
+
+      }
+      pObj[peName] = peScore;
+
+    }
+
+
+
+  }
+  return pObj;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

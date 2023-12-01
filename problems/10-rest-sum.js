@@ -10,6 +10,11 @@ restSum(0); // => 0
 ***********************************************************************/
 
 function restSum(...otherNums) {
+  let sum = otherNums.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0,);
+  return sum;
+
   // Your code here
 }
 
